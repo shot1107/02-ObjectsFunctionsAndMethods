@@ -3,8 +3,8 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Shota Nakada.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 #
@@ -21,7 +21,6 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 import rosegraphics as rg
 import random
 
-
 def main():
     """
     Makes a TurtleWindow,
@@ -32,6 +31,7 @@ def main():
     window = rg.TurtleWindow()
 
     turtle1()
+    turtle4()
     turtle3()
     turtle2()
     turtle2()
@@ -104,9 +104,40 @@ def turtle3():
     maja.end_fill()
 
 
+def turtle4():
+    shota = rg.SimpleTurtle()
+    shota.speed = 10
+    shota.pen = rg.Pen('red', 20)
+
+    shota.forward(50)
+
+    shota.begin_fill()
+    shota.draw_circle(100)
+    shota.end_fill()
+
+
+def turtle5():
+    nakada = rg.SimpleTurtle()
+    nakada.speed = 20
+
+    i_began_here = rg.Point(nakada.x_cor(), nakada.y_cor())
+    i_am_going_here = rg.Point(random.randrange(-500, 500),
+                               random.randrange(-300, 0))
+
+    nakada.pen_up()
+    nakada.go_to(i_am_going_here)
+    nakada.pen_down()
+
+    # Do the motion.
+    nakada.left(90)
+    nakada.forward(200)
+    nakada.begin_fill()
+    nakada.draw_circle(25)
+    nakada.end_fill()
+
 ###############################################################################
 #
-# TODO: 3.
+# DONE: 3.
 #   READ the code above.  Be sure you understand:
 #     -- How many functions are defined above?
 #           (Answer: 4)
@@ -138,7 +169,7 @@ def turtle3():
 
 ###############################################################################
 #
-# TODO: 4.
+# DONE: 4.
 #   Define another function,
 #   immediately below the end of the definition of   turtle3   above.
 #   Name your new function   turtle4.
